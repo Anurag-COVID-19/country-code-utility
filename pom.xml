@@ -12,6 +12,7 @@
 	<artifactId>country-code-utility</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>country-code-utility</name>
+	<packaging>jar</packaging>
 	<description>This utility will be used to identify the country, for the given client number as an input</description>
 	<properties>
 		<java.version>19</java.version>
@@ -37,6 +38,15 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 		<!-- Java API To Access Microsoft Format Files -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
@@ -53,6 +63,25 @@
 			<artifactId>excel-streaming-reader</artifactId>
 			<version>4.0.5</version>
 		</dependency>
+		<!-- Apache API To Access CSV Format Files -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-csv</artifactId>
+			<version>1.8</version>
+		</dependency>
+		<dependency>
+			<groupId>com.googlecode.libphonenumber</groupId>
+			<artifactId>libphonenumber</artifactId>
+			<version>8.13.9</version>
+		</dependency>
+		<!-- Parsing Json Objects -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20230227</version>
+		</dependency>
+
+
 
 	</dependencies>
 
@@ -61,6 +90,19 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+						<configuration>
+							<classifier>spring-boot</classifier>
+							<mainClass>
+								com/planet/payments/countrycodeutility/CountryCodeUtilityApplication
+							</mainClass>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
