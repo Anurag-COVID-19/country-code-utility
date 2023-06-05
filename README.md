@@ -1,10 +1,13 @@
 # country-code-utility
 Problem: We have a list of orders to be processed which needs to be imported, split by country and stored. This list arrives in the form of a CSV file and the country needs to be determined based on the client phone number.
 
-Language: Java (OpenJDK 17)
+Language: Java (OpenJDK 19)
 Framework: Spring Boot - (Production ready module, can we easily integrated with microservice based architecture or this utiltiy can be shared independently)
 DB: H2 database used - lightweight
 Build Tool: Maven
+Executable: Jar
+
+Executable jar will be available in target folder directory {installed_directory}\target
 
 API's:
 1. /country-code-utility/upload/csv/{csvFile}
