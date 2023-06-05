@@ -3,7 +3,6 @@ package com.planet.payments.countrycodeutility.controllers;
 import com.planet.payments.countrycodeutility.service.DocumentConverter;
 import com.planet.payments.countrycodeutility.utility.Constants;
 import com.planet.payments.countrycodeutility.utility.DocumentValidator;
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

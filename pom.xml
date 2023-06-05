@@ -10,12 +10,15 @@
 	</parent>
 	<groupId>com.planet.payments</groupId>
 	<artifactId>country-code-utility</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>country-code-utility</name>
 	<packaging>jar</packaging>
 	<description>This utility will be used to identify the country, for the given client number as an input</description>
 	<properties>
 		<java.version>19</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+		<utility.version>1.0.0-SNAPSHOT</utility.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -88,18 +91,24 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<release>${java.version}</release>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+
 				<executions>
 					<execution>
 						<goals>
 							<goal>repackage</goal>
 						</goals>
 						<configuration>
-							<classifier>spring-boot</classifier>
-							<mainClass>
-								com/planet/payments/countrycodeutility/CountryCodeUtilityApplication
-							</mainClass>
+							<mainClass>CountryCodeUtilityApplication</mainClass>
+							<classifier>exec</classifier>
 						</configuration>
 					</execution>
 				</executions>
